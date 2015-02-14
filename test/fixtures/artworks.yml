@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  artist_id: 1
+  title: MyString
+  media: MyString
+  price: 1.5
+
+two:
+  artist_id: 1
+  title: MyString
+  media: MyString
+  price: 1.5

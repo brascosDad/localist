@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  devise_for :artists
+  resources :artworks
+
   root 'overview#index'
   get  'overview/index'
 
