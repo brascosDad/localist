@@ -27,10 +27,9 @@
     <%= f.label :price %><br>
     <%= f.text_field :price %>
   </div>
-  <div>
-    <%= form_for @artwork, :url => artworks_path, :html => { :multipart => true } do |form| %>
-    <%= form.file_field :avatar %>
-    <% end %>
+  <div class="field form-group">
+    <%= f.label "Photo" %><br>
+    <%= f.file_field :avatar %>
   </div>
   <div class="actions">
     <%= f.submit %>

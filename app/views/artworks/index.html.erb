@@ -9,6 +9,7 @@
       <th>Title</th>
       <th>Media</th>
       <th>Price</th>
+      <th>ArtWork</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -20,6 +21,9 @@
         <td><%= artwork.title %></td>
         <td><%= artwork.media %></td>
         <td><%= artwork.price %></td>
+        <% if artwork.avatar_file_name != nil %>
+              <td><%= image_tag artwork.avatar.url(:thumb) %></td>
+        <% end %>
         <td><%= link_to 'Show', artwork %></td>
         <td><%= link_to 'Edit', edit_artwork_path(artwork) %></td>
         <td><%= link_to 'Destroy', artwork, method: :delete, data: { confirm: 'Are you sure?' } %></td>
