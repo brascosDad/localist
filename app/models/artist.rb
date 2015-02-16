@@ -5,4 +5,8 @@ class Artist < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :artworks
+
+  def fullname
+  	"#{first_name} #{last_name}"
+  end
 end
