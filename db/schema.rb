@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150214025411) do
+ActiveRecord::Schema.define(version: 20150215151229) do
 
   create_table "artists", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -40,8 +40,12 @@ ActiveRecord::Schema.define(version: 20150214025411) do
     t.string   "title"
     t.string   "media"
     t.float    "price"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
 end

@@ -20,5 +20,9 @@
   <%= @artwork.price %>
 </p>
 
+<p>
+	<%= image_tag @artwork.avatar.url(:medium) %>
+</p>
+
 <%= link_to 'Edit', edit_artwork_path(@artwork) %> |
 <%= link_to 'Back', artworks_path %>
