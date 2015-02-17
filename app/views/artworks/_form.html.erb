@@ -12,12 +12,10 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :artist_id %><br>
-    <%= f.number_field :artist_id %>
-  </div>
-  <div class="field">
-    <%= f.label :artist %>
-    <%#= f.select(:artist, @artists.collect {|artist| [artist.fullname, artist.id] }, {:include_blank => 'Please select an item'}) %>
+    <%#= f.label :artist %><br>
+    <%#= f.number_field :artist_id %>
+    <%#= f.select(:artist_id, @artists.collect {|a| [ a.fullname, a.id ] }, {:include_blank => 
+      'Please select an item'}) %>
   </div>
   <div class="field">
     <%= f.label :title %><br>

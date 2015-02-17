@@ -20,14 +20,14 @@ class ArtworksController < ApplicationController
 
   # GET /artworks/1/edit
   def edit
-    @artists = Artist.all
+    @artworks = Artwork.find_by_id(current_artist.id)
   end
 
   # POST /artworks
   # POST /artworks.json
   def create
     @artwork = Artwork.new(artwork_params)
-
+    @artwork.artist_id = current_artist.id
     respond_to do |format|
       if @artwork.save
         format.html { redirect_to @artwork, notice: 'Artwork was successfully created.' }
