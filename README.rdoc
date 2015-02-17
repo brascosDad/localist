@@ -2,7 +2,7 @@
 
 This app is a collaboration between Garey Simpson, Ernest Son and Sam Skinner.
 
-Back-end work: Sam Skinner.
+Back-end work: Sam Skinner.<br>
 Front-end & Concepts: Garey Simpson & Ernest Son.
 
 
