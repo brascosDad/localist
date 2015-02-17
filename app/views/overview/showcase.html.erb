@@ -1,0 +1,10 @@
+<% @artworks.each do |artwork| %>
+	<h2><%=	artwork.artist.fullname %><br></h2>
+	<%=	artwork.artist.zip %><br>
+	<%= artwork.title %><br>
+	<%= artwork.media %><br>
+	<%= artwork.price %><br>
+	<% if artwork.avatar_file_name != nil %>
+		<%= image_tag artwork.avatar.url(:thumb) %><br>
+	<% end %>
+<% end %>
