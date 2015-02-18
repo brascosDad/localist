@@ -21,8 +21,8 @@
         <td><%= artwork.title %></td>
         <td><%= artwork.media %></td>
         <td><%= artwork.price %></td>
-        <% if artwork.avatar_file_name != nil %>
-              <td><%= image_tag artwork.avatar.url(:thumb) %></td>
+        <% if artwork.image_file_name != nil %>
+              <td><%= image_tag artwork.image.url(:thumb) %></td>
         <% end %>
         <td><%= link_to 'Show', artwork %></td>
         <td><%= link_to 'Edit', edit_artwork_path(artwork) %></td>
