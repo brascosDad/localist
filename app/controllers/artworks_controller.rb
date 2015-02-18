@@ -71,6 +71,6 @@ class ArtworksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def artwork_params
-      params.require(:artwork).permit(:artist_id, :title, :media, :price, :avatar)
+      params.require(:artwork).permit(:artist_id, :title, :media, :price, :image)
     end
 end

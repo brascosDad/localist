@@ -9,4 +9,8 @@ class Artist < ActiveRecord::Base
   def fullname
   	"#{first_name} #{last_name}"
   end
+
+   def image_url
+    artwork.picture.url(:medium)
+  end
 end
