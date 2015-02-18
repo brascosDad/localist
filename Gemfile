@@ -28,8 +28,8 @@ gem 'aws-sdk', '< 2.0'
 
 group :development, :test do
   gem 'sqlite3'
-  gem 'byebug'  
-  gem 'web-console', '~> 2.0'  
+  gem 'byebug'
+  gem 'web-console', '~> 2.0'
   gem 'spring'
   gem 'annotate'
   gem 'better_errors'
