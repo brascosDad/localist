@@ -2,9 +2,7 @@ Rails.application.routes.draw do
   devise_for :artists
   resources :artworks
 
-  root 'overview#home'
-  get  'overview/home'
-  get 'home' => 'overview#home'
+  root 'overview#showcase'
   get 'showcase' => 'overview#showcase'
 
   # The priority is based upon order of creation: first created -> highest priority.
