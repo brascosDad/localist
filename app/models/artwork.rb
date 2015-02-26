@@ -1,20 +1,11 @@
 class Artwork < ActiveRecord::Base
-	has_attached_file :image, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
-  validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
-
   belongs_to :artist
 
-  has_attached_file :image, artworks: {
-  thumb: '100x100>',
-  square: '200x200#',
-  medium: '500x500>',
-  }
-
   has_attached_file :image, :styles => {
-    :square => "200x200#",
+    :square => "250x250#",
     :medium => "500x500>",
-    :thumb => "100x100>"},
-    :default_url => "/images/:style/missing.png"
+    :thumb => "250x250#"
+  },:default_url => "/images/:style/missing.png"
 
   validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
 

@@ -1,59 +1,17 @@
-<div id="grid-gallery" class="grid-gallery">
-  <section class="grid-wrap">
-    <ul class="grid">
-      <li class="grid-sizer"></li><!-- for Masonry column width -->
-      
-      <% @artworks.each do |artwork| %>
-        <% if artwork.image_file_name.present? %>
-          
-          <li>
-            <figure>
-              <%= image_tag artwork.image.url(:medium) %>
-              <figcaption>
-                <h3><%= artwork.title %></h3>
-                <!-- <p>Chillwave hoodie ea gentrify aute sriracha consequat.</p> -->
-              </figcaption>
-            </figure>
-          </li>
-
-        <% end %>
-      <% end %>
-
-    </ul>
-  </section><!-- // grid-wrap -->
-  <section class="slideshow">
-    <ul>
-      
-      <% @artworks.each do |artwork| %>
-        <% if artwork.image_file_name.present? %>
-
-          <li>
-            <figure>
-              <figcaption>
-                <h3>Letterpress asymmetrical</h3>
-                <p>Kale chips lomo biodiesel stumptown Godard Tumblr, mustache sriracha tattooed cray aute slow-carb placeat delectus. Letterpress asymmetrical fanny pack art party est pour-over skateboard anim quis, ullamco craft beer.</p>
-              </figcaption>
-              <img src="img/large/1.png" alt="img01"/>
-            </figure>
-          </li>
-
-        <% end %>
-      <% end %>
-
-    </ul>
-    <nav>
-      <span class="icon nav-prev"></span>
-      <span class="icon nav-next"></span>
-      <span class="icon nav-close"></span>
-    </nav>
-    <div class="info-keys icon">Navigate with arrow keys</div>
-  </section><!-- // slideshow -->
-</div><!-- // grid-gallery -->
-
-<script src="js/imagesloaded.pkgd.min.js"></script>
-<script src="js/masonry.pkgd.min.js"></script>
-<script src="js/classie.js"></script>
-<script src="js/cbpGridGallery.js"></script>
+<ul id="og-grid" class="og-grid">
+  <% @artworks.each do |artwork| %>
+    <% if artwork.image_file_name.present? %>
+      <li>
+        <a href="#" data-largesrc="<%= artwork.image.url(:medium) %>" data-title="<%= artwork.title %>" data-description="" data-media="<%= artwork.media %>" data-price="<%= artwork.price %>">
+          <%= image_tag artwork.image.url(:thumb), alt: artwork.title %>
+        </a>
+      </li>
+    <% end %>
+  <% end %>
+</ul>
+<script src="https://s3.amazonaws.com/localist-art/grid.js"></script>
 <script>
-  new CBPGridGallery( document.getElementById( 'grid-gallery' ) );
+  $(function() {
+    Grid.init();
+  });
 </script>
