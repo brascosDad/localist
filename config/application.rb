@@ -8,6 +8,8 @@ Bundler.require(*Rails.groups)
 
 module Localist
   class Application < Rails::Application
+
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
@@ -22,5 +24,13 @@ module Localist
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+    
+    config.before_configuration do
+      env_file = File.join(Rails.root, 'config', 'application.yml')
+      YAML.load(File.open(env_file)).each do |key, value|
+        ENV[key.to_s] = value
+      end if File.exists?(env_file)
+    end
+    
   end
 end
