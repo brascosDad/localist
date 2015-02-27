@@ -344,10 +344,11 @@ var Grid = (function() {
 			// create Preview structure:
 			this.$title = $( '<h3></h3>' );
 			this.$description = $( '<p></p>' );
+			this.$artist = $( '<p></p>' );
 			this.$media = $( '<p></p>' );
 			this.$price = $( '<p></p>' );
 			this.$href = $( '<a href="#">Visit website</a>' );
-			this.$details = $( '<div class="og-details"></div>' ).append( this.$title, this.$media, this.$price, this.$href );
+			this.$details = $( '<div class="og-details"></div>' ).append( this.$title, this.$artist, this.$media, this.$price, this.$href );
 			this.$loading = $( '<div class="og-loading"></div>' );
 			this.$fullimage = $( '<div class="og-fullimg"></div>' ).append( this.$loading );
 			this.$closePreview = $( '<span class="og-close"></span>' );
@@ -385,12 +386,14 @@ var Grid = (function() {
 					largesrc : $itemEl.data( 'largesrc' ),
 					title : $itemEl.data( 'title' ),
 					description : $itemEl.data( 'description' ),
+					artist : $itemEl.data( 'artist' ),
 					media : $itemEl.data( 'media' ),
 					price : $itemEl.data( 'price' )
 				};
 
 			this.$title.html( eldata.title );
 			this.$description.html( eldata.description );
+			this.$artist.html( eldata.artist );
 			this.$media.html( eldata.media );
 			this.$price.html( eldata.price );
 			this.$href.attr( 'href', eldata.href );
