@@ -20,7 +20,7 @@
         <td><%= artwork.artist.fullname %></td>
         <td><%= artwork.title %></td>
         <td><%= artwork.media %></td>
-        <td><%= artwork.price %></td>
+        <td><%= number_to_currency(artwork.price) %></td>
         <% if artwork.image_file_name != nil %>
               <td><%= image_tag artwork.image.url(:thumb) %></td>
         <% end %>
