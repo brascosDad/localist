@@ -25,6 +25,7 @@ gem 'paperclip', '~> 4.2'
 gem 'geocoder'
 gem 'strip_attributes', '~> 1.5.0'
 gem 'aws-sdk', '< 2.0'
+gem 'figaro'
 
 group :development, :test do
   gem 'sqlite3'
