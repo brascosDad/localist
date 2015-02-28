@@ -1,0 +1,5 @@
+<%= @artist.fullname %>
+
+<% @artist.artworks.each do |artwork| %>
+  <%= image_tag artwork.image.url(:thumb), alt: artwork.title %>
+<% end %>

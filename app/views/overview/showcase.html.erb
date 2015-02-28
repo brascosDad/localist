@@ -2,7 +2,7 @@
   <% @artworks.each do |artwork| %>
     <% if artwork.image_file_name.present? %>
       <li>
-        <a href="#" data-largesrc="<%= artwork.image.url(:medium) %>" data-title="<%= artwork.title %>" data-description="" data-artist="<%= artwork.artist.fullname %>" data-media="<%= artwork.media %>" data-price="<%= number_to_currency(artwork.price) %>">
+        <a href="/artworks/<%= artwork.id %>" data-largesrc="<%= artwork.image.url(:medium) %>" data-title="<%= artwork.title %>" data-description="" data-artist="<%= artwork.artist.fullname %>" data-media="<%= artwork.media %>" data-price="<%= number_to_currency(artwork.price) %>">
           <%= image_tag artwork.image.url(:thumb), alt: artwork.title %>
         </a>
       </li>

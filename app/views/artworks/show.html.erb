@@ -1,28 +1,43 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Artist:</strong>
-  <%= @artwork.artist.fullname %>
-</p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @artwork.title %>
-</p>
+<div class="row">
+  <div class ="col-md-6">
+    <%= render 'artist_profile' %>
+  </div>
 
-<p>
-  <strong>Media:</strong>
-  <%= @artwork.media %>
-</p>
+  <div class ="col-md-6">
+    <p>
+    	<%= image_tag @artwork.image.url(:medium) %>
+    </p>
 
-<p>
-  <strong>Price:</strong>
-  <%= number_to_currency(@artwork.price) %>
-</p>
+    <p>
+      <strong>Title:</strong>
+      <%= @artwork.title %>
+    </p>
 
-<p>
-	<%= image_tag @artwork.image.url(:medium) %>
-</p>
+    <p>
+      <strong>Media:</strong>
+      <%= @artwork.media %>
+    </p>
 
-<%= link_to 'Edit', edit_artwork_path(@artwork) %> |
-<%= link_to 'Back', artworks_path %>
+    <p>
+      <strong>Price:</strong>
+      <%= number_to_currency(@artwork.price) %>
+    </p>
+
+    <% if signed_in? && current_artist == @artwork.artist %>
+      <small><%= link_to 'Edit', edit_artwork_path(@artwork) %></small>
+    <% end %>
+  </div>
+</div>
+
+<footer class="footer" style="position: absolute;bottom: 0;">
+  <div class="container">
+    <div class="row">
+      <% @artwork.artist.artworks.each do |artwork| %>
+          <%= image_tag artwork.image.url(:thumb), size: "100x100", alt: artwork.title %>
+      <% end %>
+    </div>
+  </div>
+</footer>
