@@ -1,3 +1,34 @@
 // Place all the styles related to the Artworks controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+	padding-top: 70px;
+	
+}
+
+#artist-name {
+	margin-bottom: 30px;
+}
+
+.artist-bio {
+	font-size: 1.2em;
+	padding-left: 40px;
+}
+
+.profile-bottom {
+	margin-bottom: 30px;
+	padding-left: 40px;
+}
+
+.art-info {
+	font-size: 1.2em;
+}
+
+//.edit-button {        didn't work
+//	display: hidden;
+//}
+
+//.new-footer {
+//	margin-top: 30px;
+//}
