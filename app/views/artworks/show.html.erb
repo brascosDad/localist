@@ -2,42 +2,32 @@
 
 
 <div class="row">
-  <div class ="col-md-6">
-    <%= render 'artist_profile' %>
-  </div>
-
-  <div class ="col-md-6">
+  <div class="col-md-6 col-md-push-6">
     <p>
-    	<%= image_tag @artwork.image.url(:medium) %>
+      <%= image_tag @artwork.image.url(:medium), class: 'img-frame img-reponsive img-thumbnail' %>
     </p>
+    <div class="pull-left">
+      <p class="artwork-lead">
+        <%= @artwork.title %>
+      </p>
 
-    <p>
-      <strong>Title:</strong>
-      <%= @artwork.title %>
-    </p>
-
-    <p>
-      <strong>Media:</strong>
-      <%= @artwork.media %>
-    </p>
-
-    <p>
-      <strong>Price:</strong>
-      <%= number_to_currency(@artwork.price) %>
-    </p>
-
-    <% if signed_in? && current_artist == @artwork.artist %>
-      <small><%= link_to 'Edit', edit_artwork_path(@artwork) %></small>
-    <% end %>
-  </div>
-</div>
-
-<footer class="footer" style="position: absolute;bottom: 0;">
-  <div class="container">
-    <div class="row">
-      <% @artwork.artist.artworks.each do |artwork| %>
-          <%= image_tag artwork.image.url(:thumb), size: "100x100", alt: artwork.title %>
-      <% end %>
+      <p>
+        <%= @artwork.media %>
+      </p>
+    </div>
+    <div class="pull-right">
+      <p class="artwork-lead">
+        <%= number_to_currency(@artwork.price) %>
+      </p>
+      <p>
+        <% if signed_in? && current_artist == @artwork.artist %>
+          <small><%= link_to 'Edit', edit_artwork_path(@artwork) %></small>
+        <% end %>
+      </p>
     </div>
   </div>
-</footer>
+
+  <div class="col-md-6 col-md-pull-6">
+    <%= render 'artist_profile' %>
+  </div>
+</div>

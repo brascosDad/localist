@@ -1,3 +1,16 @@
 // Place all the styles related to the Artworks controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.artwork-lead {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 21px;
+  font-weight: 300;
+  margin-bottom: 0;
+}
+
+.img-frame {
+  width: 100%;
+  border-width: 12px;
+  border-color: #2A2A2A;
+}
