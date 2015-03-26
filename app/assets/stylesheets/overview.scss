@@ -1,3 +1,36 @@
 // Place all the styles related to the Overview controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/**** GENERAL *****/
+
+
+
+body {
+	background:	 url('Fabric-4.png');
+	font-family: 'Oswald', sans-serif;
+	font-size: large;
+}
+
+.container {
+	padding-top: 5%;
+}
+
+/**** NAV *****/
+
+.nav {
+	padding-left: 10%;
+}
+
+.navbar-default .navbar-brand {
+	color: #4A4646;
+}
+
+.navbar-default .navbar-nav > li > a {
+	color: #4A4646;
+}
+
+.navbar-header a {
+	font-family: 'Pacifico', cursive;
+	font-size: xx-large;
+}
